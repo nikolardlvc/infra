@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: external-dns
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: external-dns
+      version: 1.15.0
+      sourceRef:
+        kind: HelmRepository
+        name: external-dns
+        namespace: flux-system
+  values:
+    provider:
+      name: google
+    domainFilters:
+      - upondi.com
+    txtOwnerId: uni-platform
+    policy: sync
+    serviceAccount:
+      create: true
+      name: external-dns
+      annotations:
+        iam.gke.io/gcp-service-account: "fh-burgenland-external-dns@project-c8720d77-cb3f-4556-9fe.iam.gserviceaccount.com"
