@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: https://github.com/nikolardlvc/infra
+  url: ssh://git@github.com/nikolardlvc/infra
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
