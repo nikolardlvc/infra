@@ -7,3 +7,4 @@ resources:
   - external-secrets.yaml
   - secret-stores.yaml
   - config-connector.yaml
+  - crossplane.yaml
