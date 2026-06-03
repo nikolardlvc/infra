@@ -22,4 +22,19 @@ spec:
   upgrade:
     crds: CreateReplace
 
-  values: {}
+  values:
+    resourcesCrossplane:
+      requests:
+        cpu: 50m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+
+    resourcesRBACManager:
+      requests:
+        cpu: 25m
+        memory: 64Mi
+      limits:
+        cpu: 100m
+        memory: 256Mi
